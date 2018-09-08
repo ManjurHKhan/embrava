@@ -1,0 +1,5 @@
+.DS_Store
+**/node_modules/
+config_vars.json
+error.log
+eBay_categories/
