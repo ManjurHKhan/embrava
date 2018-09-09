@@ -43,11 +43,10 @@ export class SignInForm extends React.Component {
 			dataType: "text",
 			contentType: "application/json; charset=utf-8",
 			success: function(data) {
-				var response = JSON.parse(data);
-				console.log(response);
+				console.log(data);
 			}.bind(this)
 		});
-		this.setState({flag: false})
+		this.setState({ flag: false });
 	}
 
 	render() {
@@ -123,7 +122,7 @@ export class SignInForm extends React.Component {
 								}}
 							/>
 							<TextField
-								id="employer"
+								id="provider"
 								fullWidth
 								style={{ paddingBottom: 60 }}
 								label={"Employer"}
@@ -145,8 +144,8 @@ export class SignInForm extends React.Component {
 							</div>
 						</form>
 					) : (
-						<div style={{padding: 40}}>
-						Check your email for agreement
+						<div style={{ padding: 40 }}>
+						Endrrrava! Check your email for agreement
 						</div>
 					)}
 				</Paper>

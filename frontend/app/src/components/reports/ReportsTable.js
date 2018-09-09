@@ -27,12 +27,14 @@ export class ReportsTable extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch(`http://35.196.100.191:3000`, {
-			credentials: "same-origin",
-			headers: {
-				"content-type": "application/json"
+		fetch(
+			`http://35.196.100.191:3000/envelopes`,
+			{
+				headers: {
+					"Content-Type": "application/json"
+				}
 			}
-		})
+		)
 			.then(res => {
 				console.log(res);
 				if (!res.ok) {
@@ -65,8 +67,6 @@ export class ReportsTable extends React.Component {
 							<TableHead>
 								<TableRow>
 									<TableCell>ReportID</TableCell>
-									<TableCell>Time From</TableCell>
-									<TableCell>Time To</TableCell>
 								</TableRow>
 							</TableHead>
 							<TableBody>
@@ -75,49 +75,18 @@ export class ReportsTable extends React.Component {
 										<TableRow
 											onClick={() => {
 												var win = window.open(
-													`https://demo.docusign.net/restapi/v2/accounts/1703061/envelopes/${report.id}/documents/combined`,
-													"_blank"
+													`http://35.196.100.191:3000/pdf/${report.envelopeId}`
 												);
 												win.focus();
 											}}
 											style={{ cursor: "pointer" }}
 											hover={true}
-											key={report.id}>
+											key={report.envelopeId}>
 											<TableCell
 												style={{
-													width: "40%"
+													width: "100%"
 												}}>
-												{report.id}
-											</TableCell>
-											<TableCell
-												style={{
-													width: "30%"
-												}}>
-												{new Date(
-													report.dateFrom
-												).toDateString() +
-													" at " +
-													new Date(
-														report.dateFrom
-													).toLocaleTimeString([], {
-														hour: "2-digit",
-														minute: "2-digit"
-													})}
-											</TableCell>
-											<TableCell
-												style={{
-													width: "30%"
-												}}>
-												{new Date(
-													report.dateTo
-												).toDateString() +
-													" at " +
-													new Date(
-														report.dateTo
-													).toLocaleTimeString([], {
-														hour: "2-digit",
-														minute: "2-digit"
-													})}
+												{report.envelopeId}
 											</TableCell>
 										</TableRow>
 									);

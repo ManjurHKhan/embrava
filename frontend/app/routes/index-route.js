@@ -33,5 +33,10 @@ router.get("/reports", async function(req, res) {
     }
 });
 
+router.get("/reports", async function(req, res) {
+    var configFile = req.app.get("appConfig");
+    
+});
+
 
 module.exports = router;
