@@ -76,7 +76,7 @@ export class SignInForm extends React.Component {
 						paddingBottom: 30,
 						overflowY: "auto"
 					}}>
-					<div style={style.logoStyle}>endrava</div>
+					<div style={style.logoStyle}>ENDRAVA</div>
 					{this.state.flag ? (
 						<form
 							onSubmit={e => this.submit(e)}
