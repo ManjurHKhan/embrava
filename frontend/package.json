@@ -1,0 +1,37 @@
+{
+	"name": "frontend",
+	"version": "1.0.0",
+	"description": "frontend-microservice",
+	"main": "app/app.js",
+	"scripts": {
+		"start": "nodemon -e css,js,json,ejs --watch app",
+		"dev": "webpack -wd"
+	},
+	"author": "aaron spitalny",
+	"license": "ISC",
+	"dependencies": {
+		"@material-ui/core": "^1.5.1",
+		"@material-ui/icons": "^2.0.0",
+		"babel-core": "^6.26.3",
+		"body-parser": "^1.18.3",
+		"ejs": "^2.6.1",
+		"express": "^4.16.3",
+		"node-fetch": "^2.1.2",
+		"nodemon": "^1.17.4",
+		"react": "^16.4.2",
+		"react-dom": "^16.4.2",
+		"react-pdf": "^3.0.5",
+		"webpack-manifest-plugin": "^2.0.3"
+	},
+	"devDependencies": {
+		"babel-loader": "^7.1.4",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-3": "^6.24.1",
+		"css-loader": "^0.28.11",
+		"style-loader": "^0.21.0",
+		"webpack": "^4.8.3",
+		"webpack-cli": "^3.1.0"
+	}
+}
